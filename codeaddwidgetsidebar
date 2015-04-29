@@ -1,0 +1,15 @@
+genesis_register_sidebar( array(
+ 'id' => 'featured',
+ 'name' => __( 'Featured', 'your-theme-slug' ),
+ 'description' => __( 'This is the featured section.', 'your-theme-slug' ),
+) );
+
+add_action( 'genesis_before_content_sidebar_wrap', 'sk_add_featured_section' );
+function sk_add_featured_section() {
+
+ genesis_widget_area( 'featured', array(
+ 'before'=> '<div class="featured widget-area">',
+ 'after' => '</div>',
+ ) );
+
+}
